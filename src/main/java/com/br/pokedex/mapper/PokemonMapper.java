@@ -1,6 +1,12 @@
 package com.br.pokedex.mapper;
 
+import com.br.pokedex.dto.PokemonRequestDTO;
+import com.br.pokedex.dto.PokemonRequestUpdateDTO;
+import com.br.pokedex.dto.PokemonResponseDTO;
+import com.br.pokedex.model.Pokemon;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class PokemonMapper {
@@ -38,7 +44,7 @@ public class PokemonMapper {
                 .toList();
     }
 
-    public void updateEntity(PokemonRequestDTO dto, Pokemon pokemon) {
+    public void updateEntity(PokemonRequestUpdateDTO dto, Pokemon pokemon) {
         pokemon.setNome(dto.nome());
         pokemon.setTipo1(dto.tipo1());
         pokemon.setTipo2(dto.tipo2());
