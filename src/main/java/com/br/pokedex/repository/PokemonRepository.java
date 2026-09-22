@@ -9,5 +9,5 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 
     List<Pokemon> findByTipo1(String tipo);
 
-    List<Pokemon> findeByNomeContainingIgnoreCase(String nome);
+    List<Pokemon> findByNomeContainingIgnoreCase(String nome);
 }
