@@ -31,3 +31,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Banco H2 em arquivo
+data/
+*.mv.db
+
+# Senhas/configuração sensível
+.env
+.env.*
+!.env.example
+application-local.properties
+*.key
+*.pem
