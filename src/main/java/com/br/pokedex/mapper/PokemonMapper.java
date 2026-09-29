@@ -76,7 +76,7 @@ public class PokemonMapper {
      * @param dto     novos dados recebidos na requisição
      * @param pokemon entidade que será modificada (alterada in-place)
      */
-    public void updateEntity(PokemonRequestDTO dto, Pokemon pokemon) {
+    public void updateEntity(PokemonRequestUpdateDTO dto, Pokemon pokemon) {
         pokemon.setNome(dto.nome());
         pokemon.setTipo1(dto.tipo1());
         pokemon.setTipo2(dto.tipo2());
