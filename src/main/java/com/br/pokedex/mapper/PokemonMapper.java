@@ -6,6 +6,8 @@ import com.br.pokedex.dto.PokemonResponseDTO;
 import com.br.pokedex.model.Pokemon;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Converte entre a entidade {@link Pokemon} e seus DTOs.
  * <p>
