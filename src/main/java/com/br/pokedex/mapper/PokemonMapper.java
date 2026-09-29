@@ -1,5 +1,9 @@
 package com.br.pokedex.mapper;
 
+import com.br.pokedex.dto.PokemonRequestDTO;
+import com.br.pokedex.dto.PokemonRequestUpdateDTO;
+import com.br.pokedex.dto.PokemonResponseDTO;
+import com.br.pokedex.model.Pokemon;
 import org.springframework.stereotype.Component;
 
 /**
