@@ -98,7 +98,5 @@ formulario.addEventListener("submit", async (event) => {
         formulario.reset();
     } catch (erro){
         console.error("Erro: " , erro);
-
-        alert("Não foi possível cadastrar o Pokémon.")
     }
 });

@@ -86,19 +86,7 @@ formulario.addEventListener("submit", async (event) => {
         );
 
         if(!resposta.ok){
-            throw new Error("Erro ao cadastrar Pokémon");
+            throw new 
         }
-
-        const pokemonCadastrado = await resposta.json();
-
-        console.log("Pokémon cadastrado: " + pokemonCadastrado);
-
-        alert("Pokémon cadastrado com sucesso!");
-
-        formulario.reset();
-    } catch (erro){
-        console.error("Erro: " , erro);
-
-        alert("Não foi possível cadastrar o Pokémon.")
     }
 });

@@ -71,34 +71,9 @@ formulario.addEventListener("submit", async (event) => {
         imagemUrl: document.getElementById("imagem_url").value
     }
 
-    try {
-        const resposta = await fetch(
-            "http://localhost:8181/v1/pokedex/cadastra",
-            {
-                method: "POST",
+    try{
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify(pokemon)
-            }
-        );
-
-        if(!resposta.ok){
-            throw new Error("Erro ao cadastrar Pokémon");
-        }
-
-        const pokemonCadastrado = await resposta.json();
-
-        console.log("Pokémon cadastrado: " + pokemonCadastrado);
-
-        alert("Pokémon cadastrado com sucesso!");
-
-        formulario.reset();
-    } catch (erro){
-        console.error("Erro: " , erro);
-
-        alert("Não foi possível cadastrar o Pokémon.")
     }
+
+    
 });
