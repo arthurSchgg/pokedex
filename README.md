@@ -149,13 +149,9 @@ Você também pode abrir qualquer imagem no GitHub, clicar com o botão direito 
 
 O projeto usa o **H2 em arquivo** (`./data/pokedex`), criado automaticamente na primeira execução. Localmente, os dados persistem entre os reinícios.
 
-No Render (plano gratuito), o disco do container é temporário, então os dados são apagados a cada deploy ou reinício. Por isso a demo define `SQL_INIT=always`, que recarrega os Pokémon de exemplo do `data.sql` sempre que o serviço sobe.
-
 Para guardar dados de forma permanente, seria necessário trocar o H2 por um banco externo (por exemplo, PostgreSQL) e ajustar as propriedades `spring.datasource.*`.
 
 ## Créditos
 
 - Imagens: [PokeAPI/sprites](https://github.com/PokeAPI/sprites)
 - Desenvolvido por [@arthurSchgg](https://github.com/arthurSchgg)
-
-> Pokémon e seus personagens são marcas registradas da Nintendo, Game Freak e Creatures Inc. Este é um projeto educacional, sem fins lucrativos e sem afiliação com essas empresas.
