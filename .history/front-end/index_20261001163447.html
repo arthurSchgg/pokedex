@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Pokédex</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- =========================
+             CABEÇALHO
+        ========================== -->
+
+        <header>
+
+            <h1>Pokédex</h1>
+
+            <nav>
+                <button id="btn-buscar">
+                    Buscar por ID
+                </button>
+
+                <button id="btn-atualizar">
+                    Atualizar
+                </button>
+            </nav>
+
+        </header>
+
+
+        <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
+        <main>
+
+            <section class="lista">
+
+                <h2>Lista de Pokémons</h2>
+
+                <div id="container-pokemon">
+                </div>
+
+            </section>
+
+            <aside class="lateral">
+
+                <h2>Cadastrar Pokémon</h2>
+
+                <form id="pokemon-form">
+
+                    <input
+                        id="nome"
+                        type="text"
+                        placeholder="Nome"
+                        required
+                    >
+
+                    <input
+                        id="tipo1"
+                        type="text"
+                        placeholder="Tipo 1"
+                        required
+                    >
+
+                    <input
+                        id="tipo2"
+                        type="text"
+                        placeholder="Tipo 2"
+                    >
+
+                    <input
+                        id="hp"
+                        type="number"
+                        placeholder="HP"
+                        required
+                    >
+
+                    <input
+                        id="ataque"
+                        type="number"
+                        placeholder="Ataque"
+                        required
+                    >
+
+                    <input
+                        id="defesa"
+                        type="number"
+                        placeholder="Defesa"
+                        required
+                    >
+
+                    <input
+                        id="velocidade"
+                        type="number"
+                        placeholder="Velocidade"
+                        required
+                    >
+
+                    <input
+                        id="imagem_url"
+                        type="text"
+                        placeholder="URL da imagem"
+                        required
+                    >
+
+                    <button type="submit">
+                        Cadastrar Pokémon
+                    </button>
+
+                </form>
+
+            </aside>
+
+        </main>
+
+        <section id="area-buscar">
+
+            <h2>Buscar Pokémon por ID</h2>
+
+            <div class="busca">
+
+                <input
+                    type="number"
+                    id="id"
+                    placeholder="Digite o ID do Pokémon"
+                >
+
+                <button id="buscar-pokemon">
+                    Buscar
+                </button>
+
+            </div>
+
+            <div id="pokemon-buscado"></div>
+
+        </section>
+
+        <section id="area-atualizar">
+
+            <h2>Atualizar Pokémon</h2>
+
+            <form id="pokemon-update-form">
+
+                <input
+                    type="number"
+                    id="update-id"
+                    placeholder="ID do Pokémon"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="update-nome"
+                    placeholder="Novo nome"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="update-tipo1"
+                    placeholder="Novo tipo 1"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="update-tipo2"
+                    placeholder="Novo tipo 2"
+                >
+
+                <input
+                    type="number"
+                    id="update-hp"
+                    placeholder="Novo HP"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="update-ataque"
+                    placeholder="Novo ataque"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="update-defesa"
+                    placeholder="Nova defesa"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="update-velocidade"
+                    placeholder="Nova velocidade"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="update-imagem_url"
+                    placeholder="Nova URL da imagem"
+                    required
+                >
+
+                <button type="submit">
+                    Atualizar Pokémon
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

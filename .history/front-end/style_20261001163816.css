@@ -1,0 +1,392 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #eeeeee;
+
+    color: #222;
+
+    padding: 40px;
+}
+
+
+/* =========================================
+   APLICAÇÃO
+========================================= */
+
+#app {
+    width: 1100px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+    background-color: white;
+
+    border: 1px solid #222;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    border-bottom: 1px solid #222;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header nav {
+    display: flex;
+
+    gap: 10px;
+}
+
+header button {
+    background-color: white;
+
+    border: 1px solid #222;
+
+    padding: 8px 18px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #222;
+
+    color: white;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+main {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 30px;
+
+    padding: 25px;
+}
+
+
+/* =========================================
+   LISTA
+========================================= */
+
+.lista {
+    border: 1px solid #222;
+
+    padding: 20px;
+
+    min-height: 500px;
+}
+
+.lista h2 {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   CONTAINER DOS POKÉMONS
+========================================= */
+
+#container-pokemon {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    max-height: 430px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+
+/* =========================================
+   CARD DO POKÉMON
+========================================= */
+
+.card-pokemon {
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    background-color: #fafafa;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.card-pokemon:hover {
+    transform: translateY(-3px);
+
+    border-color: #222;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-pokemon img {
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    margin: 10px auto;
+}
+
+.card-pokemon h2 {
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.card-pokemon p {
+    font-size: 13px;
+}
+
+.pokemon-id {
+    color: #777;
+
+    font-size: 12px !important;
+}
+
+.pokemon-tipos {
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   LADO DIREITO
+========================================= */
+
+.lateral {
+    border: 1px solid #222;
+
+    padding: 20px;
+
+    min-height: 500px;
+}
+
+.lateral h2 {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FORMULÁRIOS
+========================================= */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+form input {
+    width: 100%;
+
+    height: 38px;
+
+    padding: 8px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+}
+
+form input:focus {
+    outline: none;
+
+    border-color: #222;
+}
+
+form button {
+    height: 40px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background-color: #222;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+
+/* =========================================
+   BUSCAR
+========================================= */
+
+#area-buscar {
+    border-top: 1px solid #222;
+
+    padding: 25px;
+}
+
+#area-buscar h2 {
+    margin-bottom: 15px;
+}
+
+.busca {
+    display: flex;
+
+    gap: 10px;
+
+    max-width: 500px;
+}
+
+.busca input {
+    flex: 1;
+
+    height: 38px;
+
+    padding: 8px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 4px;
+}
+
+.busca button {
+    padding: 0 20px;
+
+    border: none;
+
+    background-color: #222;
+
+    color: white;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESULTADO DA BUSCA
+========================================= */
+
+#pokemon-buscado {
+    margin-top: 20px;
+}
+
+#pokemon-buscado .card-pokemon {
+    max-width: 350px;
+
+    cursor: default;
+}
+
+
+/* =========================================
+   ATUALIZAÇÃO
+========================================= */
+
+#area-atualizar {
+    border-top: 1px solid #222;
+
+    padding: 25px;
+}
+
+#area-atualizar h2 {
+    margin-bottom: 20px;
+}
+
+#pokemon-update-form {
+    max-width: 500px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 10px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    #container-pokemon {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        height: auto;
+
+        padding: 20px;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    #container-pokemon {
+        grid-template-columns: 1fr;
+    }
+
+}
