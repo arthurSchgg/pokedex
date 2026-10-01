@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8181/v1/pokedex";
+const API_URL = "https://pokedex-jqd7.onrender.com/v1/pokedex";
 
 //Lista os pokemons
 async function carregarPokemon() {
@@ -72,7 +72,7 @@ formulario.addEventListener("submit", async (event) => {
 
     try {
         const resposta = await fetch(
-            "http://localhost:8181/v1/pokedex/cadastrar",
+            `${API_URL}/cadastrar`,
             {
                 method: "POST",
 
