@@ -25,6 +25,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("v1/pokedex")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PokemonController {
 
     private final PokemonService service;
