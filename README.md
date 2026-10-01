@@ -2,12 +2,6 @@
 
 Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-end é uma API REST em **Spring Boot** e o front-end é feito com **HTML, CSS e JavaScript puro**, servido pela própria aplicação.
 
-🔗 **Demonstração:** https://pokedex-jqd7.onrender.com
-
-> A demo roda no plano gratuito do Render. Se ficar alguns minutos sem acessos, o serviço "dorme" e a primeira requisição pode levar cerca de 1 a 2 minutos para responder. Os dados também são reiniciados a cada novo deploy ou reinício (veja [Banco de dados](#banco-de-dados)).
-
----
-
 ## Funcionalidades
 
 - Listar todos os Pokémon cadastrados
@@ -27,7 +21,6 @@ Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-
 | Documentação | springdoc-openapi (Swagger UI) |
 | Front-end | HTML, CSS e JavaScript |
 | Build | Maven (Maven Wrapper incluído) |
-| Deploy | Docker + Render |
 
 ## Estrutura do projeto
 
@@ -71,19 +64,11 @@ Depois acesse:
 | Swagger UI | http://localhost:8181/swagger-ui.html |
 | API | http://localhost:8181/v1/pokedex/listar |
 
-Para já começar com 5 Pokémon de exemplo, defina a variável `SQL_INIT=always` antes de rodar:
-
-```bash
-SQL_INIT=always ./mvnw spring-boot:run          # Linux / macOS
-$env:SQL_INIT="always"; .\mvnw.cmd spring-boot:run   # Windows (PowerShell)
-```
-
 ### Variáveis de ambiente
 
 | Variável | Padrão | Descrição |
 |---|---|---|
 | `PORT` | `8181` | Porta do servidor (o Render define automaticamente) |
-| `SQL_INIT` | `never` | Use `always` para executar o `data.sql` na inicialização |
 | `H2_CONSOLE` | `false` | Use `true` para habilitar o console do H2 em `/h2-console` |
 
 ## Endpoints da API
@@ -159,8 +144,6 @@ https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{numero
 ```
 
 Você também pode abrir qualquer imagem no GitHub, clicar com o botão direito sobre ela e escolher **Copiar endereço da imagem**.
-
----
 
 ## Banco de dados
 
