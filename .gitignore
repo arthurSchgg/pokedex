@@ -31,10 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+.history/
 
 # Banco H2 em arquivo
 data/
 *.mv.db
+*.trace.db
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
 
 # Senhas/configuração sensível
 .env
