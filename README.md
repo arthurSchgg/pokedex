@@ -1,6 +1,6 @@
 # Pokédex
 
-Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-end é uma API REST em **Spring Boot** e o front-end é feito com **HTML, CSS e JavaScript puro**, servido pela própria aplicação.
+Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-end é uma API REST em **Spring Boot** e o front-end é feito com **HTML, CSS e JavaScript puro**, em uma pasta separada (`front-end/`) que consome a API.
 
 ## Funcionalidades
 
@@ -21,6 +21,7 @@ Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-
 | Documentação | springdoc-openapi (Swagger UI) |
 | Front-end | HTML, CSS e JavaScript |
 | Build | Maven (Maven Wrapper incluído) |
+| Container | Docker |
 
 ## Estrutura do projeto
 
@@ -28,6 +29,7 @@ Aplicação web para cadastrar, consultar, atualizar e excluir Pokémon. O back-
 pokedex/
 ├── Dockerfile
 ├── pom.xml
+├── front-end/              # Front-end (index.html, script.js, style.css)
 └── src/main/
     ├── java/com/br/pokedex/
     │   ├── controller/     # Endpoints REST
@@ -38,38 +40,50 @@ pokedex/
     │   └── model/          # Entidade Pokemon
     └── resources/
         ├── application.properties
-        ├── data.sql        # Pokémon de exemplo
-        └── static/         # Front-end (index.html, script.js, style.css)
+        └── data.sql        # Pokémon de exemplo
 ```
 
 ## Como rodar localmente
 
 **Pré-requisitos:** Java 21 instalado. O Maven não precisa estar instalado, pois o projeto inclui o Maven Wrapper.
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-cd SEU-REPOSITORIO
+### 1. Back-end (API)
 
-# 2. Rode a aplicação
+```bash
+# Clone o repositório
+git clone https://github.com/arthurSchgg/pokedex.git
+cd pokedex
+
+# Rode a aplicação
 ./mvnw spring-boot:run        # Linux / macOS
 mvnw.cmd spring-boot:run      # Windows
 ```
 
-Depois acesse:
-
 | O quê | Endereço |
 |---|---|
-| Aplicação (front-end) | http://localhost:8181 |
 | Swagger UI | http://localhost:8181/swagger-ui.html |
 | API | http://localhost:8181/v1/pokedex/listar |
+
+### 2. Front-end
+
+Com a API rodando, abra o arquivo `front-end/index.html` no navegador. Se preferir, use a extensão **Live Server** do VS Code.
+
+> O front-end chama a API em `http://localhost:8181`, então o back-end precisa estar rodando na porta `8181`.
+
+### Rodando com Docker (opcional)
+
+```bash
+docker build -t pokedex .
+docker run -p 8181:8181 pokedex
+```
 
 ### Variáveis de ambiente
 
 | Variável | Padrão | Descrição |
 |---|---|---|
-| `PORT` | `8181` | Porta do servidor (o Render define automaticamente) |
+| `PORT` | `8181` | Porta do servidor |
 | `H2_CONSOLE` | `false` | Use `true` para habilitar o console do H2 em `/h2-console` |
+| `SQL_INIT` | `never` | Use `always` para carregar os Pokémon de exemplo do `data.sql` na inicialização |
 
 ## Endpoints da API
 
@@ -149,7 +163,7 @@ Você também pode abrir qualquer imagem no GitHub, clicar com o botão direito 
 
 O projeto usa o **H2 em arquivo** (`./data/pokedex`), criado automaticamente na primeira execução. Localmente, os dados persistem entre os reinícios.
 
-Para guardar dados de forma permanente, seria necessário trocar o H2 por um banco externo (por exemplo, PostgreSQL) e ajustar as propriedades `spring.datasource.*`.
+Em plataformas de deploy com sistema de arquivos temporário (como o plano gratuito do Render), os dados podem ser perdidos a cada novo deploy ou reinício. Para guardar dados de forma permanente, seria necessário trocar o H2 por um banco externo (por exemplo, PostgreSQL) e ajustar as propriedades `spring.datasource.*`.
 
 ## Créditos
 
